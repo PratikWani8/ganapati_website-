@@ -1,4 +1,5 @@
 // Scroll animations
+
         const observerOptions = {
             threshold: 0.1,
             rootMargin: '0px 0px -50px 0px'
@@ -17,6 +18,7 @@
         });
 
         // Smooth scrolling
+
         function scrollToSection(sectionId) {
             const element = document.getElementById(sectionId);
             const navHeight = document.querySelector('.navbar').offsetHeight;
@@ -28,7 +30,8 @@
             });
         }
         
-        // Toggle 
+        // Toggle Navigation bar 
+
         const toggle = document.getElementById('toggle');
 const menu = document.getElementById('nav-menu');
 
@@ -37,7 +40,8 @@ toggle.addEventListener('click', () => {
     toggle.classList.toggle('open');
 });
 
-        // Modal functionality
+        // Modal 
+
         const godDetails = {
             p1: {
                 title: 'Mayureshwar - Moregaon',
@@ -68,7 +72,7 @@ toggle.addEventListener('click', () => {
                     <p><strong>Location: </strong>  Pali, Raigad district</p>
                     <p><strong>Deity Name: </strong> Ballaleshwar</p>
                     <p><strong>Legend: </strong> A devoted boy named Ballal worshipped Ganesha; moved by his devotion, Ganesha appeared and promised to reside there as Ballaleshwar.</p>
-                    <p><strong>Specialty:        </strong> This is the only Ganesha idol named after a devotee. </p>
+                    <p><strong>Specialty: </strong> This is the only Ganesha idol named after a devotee. </p>
                    
                 `
             },
@@ -147,7 +151,8 @@ toggle.addEventListener('click', () => {
             document.body.style.overflow = 'auto';
         }
 
-        // Close modal when clicking outside
+        // Close modal 
+
         window.onclick = function(event) {
             const modal = document.getElementById('modal');
             if (event.target === modal) {
@@ -156,6 +161,7 @@ toggle.addEventListener('click', () => {
         }
 
         // Navbar scroll effect
+
         window.addEventListener('scroll', () => {
             const navbar = document.querySelector('.navbar');
             if (window.scrollY > 50) {
@@ -196,14 +202,17 @@ answer: "Hibiscus"
 ];
 let currentQuestion = 0;
 let score = 0;
+
 const questionEl = document.getElementById("question");
 const optionsEl = document.getElementById("options");
 const nextBtn = document.getElementById("nextBtn");
 const resultEl = document.getElementById("result");
+
 function loadQuestion() {
 const q = quizData[currentQuestion];
 questionEl.textContent = q.question;
 optionsEl.innerHTML = "";
+
 q.options.forEach(option => {
 const btn = document.createElement("button");
 btn.classList.add("option");
@@ -212,33 +221,42 @@ btn.style.animation = "pop 0.4s ease";
 btn.onclick = () => selectAnswer(btn, q.answer);
 optionsEl.appendChild(btn);
 });
+
 nextBtn.classList.add("hidden");
 resultEl.textContent = "";
 }
+
 function selectAnswer(button, correctAnswer) {
 const options = document.querySelectorAll(".option");
 options.forEach(btn => btn.disabled = true);
+
 if (button.textContent === correctAnswer) {
 button.style.background = "#6BCB77";
 button.style.transform = "scale(1.1)";
 setTimeout(() => button.style.transform = "scale(1)", 200);
 score++;
 resultEl.textContent = "✅ Correct!";
-} else {
+} 
+
+else {
 button.style.background = "#FF6B6B";
 button.style.transform = "shake 0.3s";
 resultEl.textContent = `❌ Wrong! Correct answer: ${correctAnswer}`;
 }
 nextBtn.classList.remove("hidden");
 }
+
 nextBtn.addEventListener("click", () => {
 currentQuestion++;
+
 if (currentQuestion < quizData.length) {
 loadQuestion();
-} else {
+}
+else {
 showFinalResult();
 }
 });
+
 function showFinalResult() {
 questionEl.textContent = "🎉 Quiz Completed!";
 optionsEl.innerHTML = "";
@@ -246,6 +264,7 @@ resultEl.textContent = `Your Score: ${score} / ${quizData.length}`;
 nextBtn.classList.add("hidden");
 resultEl.style.animation = "pop 0.6s ease";
 }
+
 loadQuestion();
 
 // Ganapati Name Picker 
@@ -265,14 +284,15 @@ loadQuestion();
   "Pramukh", "Avighna", "Durga", "Vighneshvara", "Siddhivinayaka", "Skandapurvaja", "Heramba", "Vakratunda", 
   "Gajanan", "Bhalachandra", "Ganadhyaksha", "Dhumraketu", "Vinayaka", "Vighnanasha", "Vikata", "Lambodara", 
   "Gajakarna", "Kapila", "Ekadanta", "Sumukha"];
- let isPickingAnimation = false;
 
-        // Initialize the name count
+let isPickingAnimation = false;
+
         document.getElementById('nameCount').textContent = names.length;
 
         function createSparkles() {
             const container = document.querySelector('.np-container');
-            for (let i = 0; i < 8; i++) {
+            
+         for (let i = 0; i < 8; i++) {
                 const sparkle = document.createElement('div');
                 sparkle.className = 'sparkle';
                 sparkle.style.left = Math.random() * 100 + '%';
@@ -292,16 +312,15 @@ loadQuestion();
             const nameDisplay = document.getElementById('nameDisplay');
             const selectedNameEl = document.getElementById('selectedName');
             
-            // Disable button during animation
             button.disabled = true;
             button.textContent = '🎲 Picking...';
             isPickingAnimation = true;
             
-            // Remove previous name
+            
             selectedNameEl.classList.remove('show');
             nameDisplay.classList.add('picking');
             
-            // Simulate picking animation with random names
+            
             let animationCount = 0;
             const maxAnimations = 15;
             
@@ -313,7 +332,6 @@ loadQuestion();
                 if (animationCount >= maxAnimations) {
                     clearInterval(animationInterval);
                     
-                    // Final name selection
                     const finalIndex = Math.floor(Math.random() * names.length);
                     const finalName = names[finalIndex];
                     
@@ -321,11 +339,9 @@ loadQuestion();
                         selectedNameEl.textContent = finalName;
                         selectedNameEl.classList.add('show');
                         nameDisplay.classList.remove('picking');
-                        
-                        // Create sparkle effect
+                
                         createSparkles();
                         
-                        // Re-enable button
                         button.disabled = false;
                         button.textContent = '🎯 Pick Again';
                         isPickingAnimation = false;
@@ -334,7 +350,7 @@ loadQuestion();
             }, 80);
         }
 
-        // Initialize with first random name
+        
         window.addEventListener('load', () => {
             setTimeout(() => {
                 const initialIndex = Math.floor(Math.random() * names.length);
@@ -343,8 +359,7 @@ loadQuestion();
             }, 500);
         });
 
-        // Add keyboard support
-        document.addEventListener('keydown', (e) => {
+          document.addEventListener('keydown', (e) => {
             if (e.code === 'Space' || e.code === 'Enter') {
                 e.preventDefault();
                 pickRandomName();
