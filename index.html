@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lord Ganesh</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <ul class="nav-menu" id="nav-menu">
+                <li class="nav-item" onclick="scrollToSection('home')">Home</li>
+                <li class="nav-item" onclick="scrollToSection('temples')">Temples</li>
+                <li class="nav-item" onclick="scrollToSection('games')">Games</li>
+                <li class="nav-item" onclick="scrollToSection('about')">About</li>
+            </ul>
+        </div>
+        <!-- Toggle -->
+        <div class="toggle" id="toggle">
+        <span></span>
+        <span></span>
+        <span></span>
+    </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <h1 class="floating">Divine Ganapati 🕉️</h1>
+            <p>Let's Explore the fascinating world of Lord Ganesh 🌎 !!</p>
+            <button class="cta-button" onclick="scrollToSection('temples')">Discover Ganpati</button>
+        </div>
+    </section>
+
+    <!-- Temples Section -->
+    <section id="temples" class="section">
+        <h2>Ashtavinayak Ganpati Temples</h2>
+        <div class="gods-grid">
+            <div class="god-card" onclick="openModal('p1')">
+<h3>1) Mayureshwar</h3>
+                <div class="mythology">Place: Morgaon</div>
+    <img src="p1.jpg" height="200px" width="200px" alt="1">
+    <button class="power-tag">Click here for information!</button>
+    </div>
+    
+   
+            
+   <div class="god-card" onclick="openModal('p2')">
+                <h3>2) Siddhivinayak</h3>
+            <div class="mythology">Place: Siddhatek</div>
+<img src="p2.jpg" height="200px" width="200px" alt="p2">
+<button class="power-tag">Click here for information!</button>
+            </div>
+
+            <div class="god-card" onclick="openModal('p3')">
+                <h3>3) Ballaleshwar</h3>
+                <div class="mythology">Place: Pali</div>
+ <img src="p3.jpg" height="200px" width="200px" alt="p3">                
+<button class="power-tag">Click here for information!</button>           
+ </div>
+
+            <div class="god-card" onclick="openModal('p4')">
+                <h3>4) Varadvinayak</h3>
+                <div class="mythology">Place: Mahad</div>
+                <img src="p4.jpg" height="200px" width="200px" alt="p4">
+                <button class="power-tag">Click here for information!</button>
+            </div>
+
+            <div class="god-card" onclick="openModal('p5')">
+                <h3>5) Chintamani</h3>
+                <div class="mythology">Place: Theur</div>
+                <img src="p5.jpg" height="200px" width="200px" alt="p5">
+                <button class="power-tag">Click here for information!</button>
+            </div>
+
+            <div class="god-card" onclick="openModal('p6')">
+                <h3>6) Girijatmaj</h3>
+            <div class="mythology">Place: Lenyadri</div>
+            <img src="p6.jpg" height="200px" width="200px" alt="p6">
+            <button class="power-tag">Click here for information!</button>
+            </div>
+           <div class="god-card" onclick="openModal('p7')">
+                <h3>7) Vighneshwar</h3>
+                <div class="mythology">Place: Ozar</div>
+    <img src="p7.jpg" height="200px" width="200px" alt="p7">
+    <button class="power-tag">Click here for information!</button>
+            </div>
+      <div class="god-card" onclick="openModal('p8')">
+                <h3>8) Mahaganapati</h3>
+                <div class="mythology">Place: Ranjangaon</div>
+    <img src="p8.jpg" height="200px" width="200px" alt="p8">
+    <button class="power-tag">Click here for information!</button>
+            </div>
+        </div>
+    </section>
+    <!-- Pune Section -->
+    <section id="pune" class="section">
+        <h2>Manache Pach Ganpati (Pune)</h2>
+        <div class="gods-grid">
+            <div class="god-card">
+                <h3>1. Shri Kasba Ganpati: </h3> <p>The first and most historically significant of the Manache Ganpati, holding a special place in the city's devotion and history. </p>
+  
+            </div>
+            <div class="god-card">
+          <h3>2. Tambdi Jogeshwari Ganpati: </h3>
+                <p>Also known as the second Manache Ganpati, it is established at the site of the popular Tambdi Jogeshwari temple. </p>
+            </div>
+            <div class="god-card">
+                <h3>3. Guruji Talim Ganpati: </h3>
+                <p>The third most honored Ganpati, it has a strong connection to the local history of Pune.  </p>
+            </div>
+            <div class="god-card">
+                <h3>4. Tulshibaug Ganpati: </h3>
+                <p>Known as the fourth Manache Ganpati, it symbolizes the perseverance of Pune's small business owners and hawkers. </p>
+            </div>
+            <div class="god-card">
+                <h3>5. Kesri Wada Ganpati: </h3>
+                <p>The fifth and final of the Manache Ganpati, it completes the important set of venerated Ganesh mandals in Pune.  </p>
+            </div>
+        </div>
+    </section>
+    
+    <!-- game section -->
+    
+    <section class="games" id="games">
+        <h2>Games</h2>
+        <!-- quiz game -->
+        
+    <div class="quiz-container">
+<h1>🙏 Ganesh Chaturthi Quiz 🙏</h1>
+<div id="quiz">
+<div id="question" class="question"></div>
+<div id="options" class="options"></div>
+<button id="nextBtn" class="next-btn hidden">Next</button>
+<div id="result" class="result"></div>
+</div>
+</div>
+
+<!-- Ganpati Name Picker -->
+ 
+<div class="np-container">
+        <h1>108 Ganapati Name Picker 🕉️</h1>
+        <p class="subtitle">Click the button to pick a random Ganapati name!</p>
+        
+        <div class="name-display" id="nameDisplay">
+            <div class="selected-name" id="selectedName">Ready to pick!</div>
+        </div>
+        
+        <button class="pick-button" id="pickButton" onclick="pickRandomName()">
+            🎯 Pick Random Ganapati Name
+        </button>
+        
+        <div class="names-count">
+            <span>Available names:</span>
+            <span class="count-badge" id="nameCount">0</span>
+        </div>
+    </div>
+     </section>
+
+<!-- About Section -->
+    <section id="about" class="section">
+        <h2>About Lord Ganapati </h2>
+        <div style="text-align: center; max-width: 800px; margin: 0 auto;">
+            <p style="font-size: 1.2rem; line-height: 1.8; margin-bottom: 2rem;">
+ Lord Ganesh (Ganesha, Ganapati, Vinayaka) is the Hindu God of wisdom, prosperity, and remover of obstacles. He is the son of Lord Shiva and Goddess Parvati, with an elephant head, big belly, and mouse as his vehicle. His broken tusk symbolizes sacrifice and wisdom.             
+            </p>
+            <p style="font-size: 1.1rem; line-height: 1.6;">
+  He is worshipped first in every puja for success and good fortune. His favorite sweet is modak, and his main festival is Ganesh Chaturthi.               
+            </p>
+        </div>
+    </section>
+    
+    <!-- footer -->
+    <footer>
+    &copy; Created by Pratik Wani ❤️ 
+   
+  </footer>
+
+    <!-- Modal -->
+    <div id="modal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn" onclick="closeModal()">&times;</span>
+            <div id="modal-body"></div>
+        </div>
+    </div> 
+    <script src="script.js"></script>   
+</body>
+</html>
